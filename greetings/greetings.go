@@ -13,7 +13,8 @@ func Hello(name string) (string, error) {
 		return "", errors.New("empty name")
 	}
 	// if a name was received, return a greeting that embeds the name in a message.
-	message := fmt.Sprintf(ramdomFormat(), name)
+	// message := fmt.Sprintf(ramdomFormat(), name)
+	message := fmt.Sprint(randomFormat())
 	return message, nil
 }
 
@@ -33,7 +34,7 @@ func Hellos(names []string) (map[string]string, error) {
 }
 
 // randomFormat returns one of a set of greeting messages. The returned message is selected at random.
-func ramdomFormat() string {
+func randomFormat() string {
 	// A slice of message formats.
 	formats := []string{
 		"Hi, %v. Welcome!",
